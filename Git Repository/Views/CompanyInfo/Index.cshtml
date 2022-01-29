@@ -23,77 +23,72 @@
 <link rel="stylesheet" href="~/plugins/daterangepicker/daterangepicker.css">
 <!-- summernote -->
 <link rel="stylesheet" href="~/plugins/summernote/summernote-bs4.min.css">
-<link href="~/plugins/select2/css/select2.min.css" rel="stylesheet" />
-<link href="~/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css" rel="stylesheet" />
+
 <div class="card card-info">
     <div class="card-header">
         <h3 class="card-title">Company Information</h3>
     </div>
     <!-- /.card-header -->
     <!-- form start -->
+
+
     <form class="form-horizontal">
         <div class="card-body">
             <div class="form-group row">
-                <label for="inputEmail3" class="col-md-2 col-form-label" style="text-align: right;">Email :</label>
+                <label for="lblName" class="col-md-2 col-form-label" style="text-align: right;">Name  :</label>
                 <div class="col-md-4">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                    <input type="text" class="form-control" id="txtName" name="txtName" placeholder="Company Name">
                 </div>
-                <label for="inputEmail4" class="col-md-2 right col-form-label" style="text-align: right;">Name :</label>
+                <label for="lblTitle" class="col-md-2 col-form-label" style="text-align: right;">Title :</label>
                 <div class="col-md-4">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="inputPassword3" class="col-md-2 col-form-label" style="text-align: right;">Password:</label>
-                <div class="col-md-4">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                </div>
-                <label for="inputEmail4" class="col-md-2 right col-form-label" style="text-align: right;">Name :</label>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
+                    <input type="text" class="form-control" id="txtTitle" name="txtTitle" placeholder="Title">
                 </div>
             </div>
             <div class="form-group row">
-                <label for="inputPassword3" class="col-md-2 col-form-label" style="text-align: right;">Password:</label>
+                <label for="lblAddress" class="col-md-2 right col-form-label" style="text-align: right;">Address :</label>
                 <div class="col-md-4">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    <input type="text" class="form-control" id="txtAddress" name="txtAddress" placeholder="Address">
+
                 </div>
-                <label for="inputEmail4" class="col-md-2 right col-form-label" style="text-align: right;">Name :</label>
+                <label for="lblContactNo" class="col-md-2 right col-form-label" style="text-align: right;">Contact No :</label>
                 <div class="col-md-4">
-                    <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
+                    <input type="text" class="form-control" id="txtContactNo" name="txtContactNo" placeholder="Contact No">
                 </div>
             </div>
+
             <div class="form-group row">
-                <label for="inputPassword3" class="col-md-2 col-form-label" style="text-align: right;">Password:</label>
+                <label for="lblEmail" class="col-md-2 col-form-label" style="text-align: right;">Email :</label>
                 <div class="col-md-4">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    <input type="text" class="form-control" id="txtEmail" name="txtEmail" placeholder="Email">
                 </div>
-                <label for="inputEmail4" class="col-md-2 right col-form-label" style="text-align: right;">Name :</label>
+                <label for="lblBIN" class="col-md-2 right col-form-label" style="text-align: right;">BIN :</label>
                 <div class="col-md-4">
-                    <select class="form-control select2" style="width: 100%;">
-                        <option selected="selected">Alabama</option>
-                        <option>Alaska</option>
-                        <option>California</option>
-                        <option>Delaware</option>
-                        <option>Tennessee</option>
-                        <option>Texas</option>
-                        <option>Washington</option>
-                    </select>
+                    <input type="text" class="form-control" id="txtBIN" name="txtBIN" placeholder="Business Identification Number">
                 </div>
             </div>
             @*<div class="form-group row">
-                <div class="offset-md-2 col-md-10">
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                        <label class="form-check-label" for="exampleCheck2">Remember me</label>
+                    <label for="inputPassword3" class="col-md-2 col-form-label" style="text-align: right;">Password:</label>
+                    <div class="col-md-4">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
                     </div>
-                </div>
-            </div>*@
+                    <label for="inputEmail4" class="col-md-2 right col-form-label" style="text-align: right;">Name :</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
+                    </div>
+                </div>*@
+            @*<div class="form-group row">
+                    <div class="offset-md-2 col-md-10">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                            <label class="form-check-label" for="exampleCheck2">Remember me</label>
+                        </div>
+                    </div>
+                </div>*@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-            <button type="submit" class="btn btn-info">Sign in</button>
-            <button type="submit" class="btn btn-default">Cancel</button>
+            <button type="submit" id="btnSubmit" class="btn btn-info">Submit</button>
+            <button type="submit" id="btnCancel" class="btn btn-default">Cancel</button>
         </div>
         <!-- /.card-footer -->
     </form>
@@ -133,13 +128,3 @@
 <script src="~/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="~/dist/js/adminlte.js"></script>
-<script src="~/plugins/select2/js/select2.full.min.js"></script>
-<script>
-    $(function () {
-        //Initialize Select2 Elements
-        $('.select2').select2()
-        
-    });
-</script>
-
-@*Test Msg  Test test  *@ 
