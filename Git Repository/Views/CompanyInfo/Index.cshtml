@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="~/plugins/daterangepicker/daterangepicker.css">
 <!-- summernote -->
 <link rel="stylesheet" href="~/plugins/summernote/summernote-bs4.min.css">
+<link href="~/Content/kendo.common.min.css" rel="stylesheet" />
 
 <div class="card card-info">
     <div class="card-header">
@@ -93,6 +94,13 @@
         <!-- /.card-footer -->
     </form>
 </div>
+<div>
+    <div id="example">
+        <div id="grid"></div>
+
+
+    </div>
+</div>
 <!-- /.card -->
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
@@ -128,3 +136,63 @@
 <script src="~/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
 <!-- AdminLTE App -->
 <script src="~/dist/js/adminlte.js"></script>
+<script src="~/Scripts/product.js"></script>
+<script src="~/Scripts/kendo.all.min.js"></script>
+<script>
+    $("#grid").kendoGrid({
+        dataSource: {
+            type: "odata",
+            transport: {
+                read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Customers"
+            },
+            pageSize: 10
+        },
+        height: 300,
+        /*groupable: true,*/
+        sortable: {
+            mode: "multiple",
+            allowUnsort: true
+        },
+        filterable: true,
+        serverFiltering: true,
+        serverSorting: true,
+        pageable: {
+            refresh: true,
+            pageSizes: true,
+            buttonCount: 5
+        },
+        columns: [{
+            template: "<div class='customer-photo'" +
+                "style='background-image: url(../content/web/Customers/#:data.CustomerID#.jpg);'></div>" +
+                "<div class='customer-name'>#: ContactName #</div>",
+            field: "ContactName",
+            field: "ContactName",
+            filterable: {
+                multi: true,
+                search: true
+            },
+            title: "Contact Name",
+            width: 240
+        }, {
+            field: "ContactTitle",
+            filterable: {
+                multi: true,
+            },
+            title: "Contact Title"
+        }, {
+            field: "CompanyName",
+            filterable: {
+                multi: true,
+                search: true
+            },
+            title: "Company Name"
+        }, {
+            field: "Country",
+            filterable: {
+                multi: true,
+                search: true
+            },
+             width: 150          
+        }]
+    });
+</script>
