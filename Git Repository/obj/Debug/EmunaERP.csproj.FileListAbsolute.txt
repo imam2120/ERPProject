@@ -151,8 +151,8 @@ E:\Git Repository\bin\System.Web.WebPages.Razor.xml
 E:\Git Repository\bin\Newtonsoft.Json.xml
 E:\Git Repository\bin\Antlr3.Runtime.pdb
 E:\Git Repository\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Git Repository\obj\Debug\EmunaERP.csproj.AssemblyReference.cache
 E:\Git Repository\obj\Debug\EmunaERP.csproj.CoreCompileInputs.cache
 E:\Git Repository\obj\Debug\EmunaERP.csproj.CopyComplete
 E:\Git Repository\obj\Debug\EmunaERP.dll
 E:\Git Repository\obj\Debug\EmunaERP.pdb
+E:\Git Repository\obj\Debug\EmunaERP.csproj.AssemblyReference.cache
