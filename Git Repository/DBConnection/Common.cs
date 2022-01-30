@@ -415,109 +415,109 @@ namespace EmunaERP
             
         }
 
-        public static Int32 DayOpenCloseStatus()
-        {
-            try
-            {
-                int intStatus = 0;
+        //public static Int32 DayOpenCloseStatus()
+        //{
+        //    try
+        //    {
+        //        int intStatus = 0;
 
-                string strSql,OpenDate = "";
+        //        string strSql,OpenDate = "";
 
-                strSql = "Select Max(EntryDate) From Acc_DayOpenClose Where Status=0 ";
+        //        strSql = "Select Max(EntryDate) From Acc_DayOpenClose Where Status=0 ";
 
-                connection = new SqlConnection(ConnectionString);
+        //        connection = new SqlConnection(ConnectionString);
 
-                if (connection.State == ConnectionState.Closed)
-                {
-                    connection.Open();
-                }
-                command = new SqlCommand();
-                command.Connection = connection;
-                command.CommandText = strSql;
-                OpenDate = Convert.ToString(command.ExecuteScalar());
+        //        if (connection.State == ConnectionState.Closed)
+        //        {
+        //            connection.Open();
+        //        }
+        //        command = new SqlCommand();
+        //        command.Connection = connection;
+        //        command.CommandText = strSql;
+        //        OpenDate = Convert.ToString(command.ExecuteScalar());
 
-                if (!string.IsNullOrEmpty(OpenDate))
-                {
-                    intStatus = 0;
-                }
-                else
-                {
-                    intStatus = 1;
-                }
+        //        if (!string.IsNullOrEmpty(OpenDate))
+        //        {
+        //            intStatus = 0;
+        //        }
+        //        else
+        //        {
+        //            intStatus = 1;
+        //        }
 
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                }
-                return intStatus;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+        //        if (connection.State == ConnectionState.Open)
+        //        {
+        //            connection.Close();
+        //        }
+        //        return intStatus;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception(ex.Message);
+        //    }
 
-        }
-        public static string GetOpenDate(string columnName, string tableName, string whereCondition)
-        {
-            try
-            {
-                string strSql = "";
+        //}
+        //public static string GetOpenDate(string columnName, string tableName, string whereCondition)
+        //{
+        //    try
+        //    {
+        //        string strSql = "";
 
-                if (whereCondition != "")
-                {
-                    strSql = "Select IsNull(Max(" + columnName + "),0) As MaxDate From " + tableName + " Where  " + whereCondition + "";
-                }
-                else
-                {
-                    strSql = "Select IsNull(Max(" + columnName + "),0) As MaxDate From " + tableName + " ";
-                }
+        //        if (whereCondition != "")
+        //        {
+        //            strSql = "Select IsNull(Max(" + columnName + "),0) As MaxDate From " + tableName + " Where  " + whereCondition + "";
+        //        }
+        //        else
+        //        {
+        //            strSql = "Select IsNull(Max(" + columnName + "),0) As MaxDate From " + tableName + " ";
+        //        }
 
-                connection = new SqlConnection(ConnectionString);
-                connection.Open();
-                command = new SqlCommand(strSql);
-                command.CommandText = strSql;
-                command.Connection = connection;
-                SqlDataReader reader = command.ExecuteReader();
+        //        connection = new SqlConnection(ConnectionString);
+        //        connection.Open();
+        //        command = new SqlCommand(strSql);
+        //        command.CommandText = strSql;
+        //        command.Connection = connection;
+        //        SqlDataReader reader = command.ExecuteReader();
 
-                {
+        //        {
 
-                    if (reader.Read())
-                    {
-                        MaxDate = (DateTime)(reader[0]);
-                    }
+        //            if (reader.Read())
+        //            {
+        //                MaxDate = (DateTime)(reader[0]);
+        //            }
 
-                    connection.Close();
-                    return MaxDate.ToString("dd-MMM-yyyy");
-                }
+        //            connection.Close();
+        //            return MaxDate.ToString("dd-MMM-yyyy");
+        //        }
 
-            }
-            catch (Exception ex)
-            {
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                throw ex;
-            }
+        //        throw ex;
+        //    }
 
-        }
-        public static Int32 BranchStatus()
-        {
-            int intStatus = 1;
-            try
-            {
-                string strOpenDate = Common.OpenDate();
+        //}
+        //public static Int32 BranchStatus()
+        //{
+        //    int intStatus = 1;
+        //    try
+        //    {
+        //        string strOpenDate = Common.OpenDate();
 
-                if (!string.IsNullOrEmpty(strOpenDate))
-                {
-                    intStatus = 0;
-                }
+        //        if (!string.IsNullOrEmpty(strOpenDate))
+        //        {
+        //            intStatus = 0;
+        //        }
 
-            }
-            catch (Exception ex)
-            {
-                Common.ErrorMsg(ex.ToString());
-            }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Common.ErrorMsg(ex.ToString());
+        //    }
 
-            return intStatus;
-        }
+        //    return intStatus;
+        //}
         public static string CollectionDate(string savcolcdate)
         {
             DateTime returndate ;
@@ -525,44 +525,44 @@ namespace EmunaERP
             return Convert.ToString(returndate.DayOfWeek);
         }
 
-        public static string OpenDate()
-        {
-            try
-            {
-                DateTime dtmOpenDate = new DateTime();
-                string strSql,OpenDate = "";
+        //public static string OpenDate()
+        //{
+        //    try
+        //    {
+        //        DateTime dtmOpenDate = new DateTime();
+        //        string strSql,OpenDate = "";
 
-                strSql = "Select Max(EntryDate) from Acc_DayOpenClose Where CloseTime  IS NULL and Status<>1";
+        //        strSql = "Select Max(EntryDate) from Acc_DayOpenClose Where CloseTime  IS NULL and Status<>1";
 
-                connection = new SqlConnection(ConnectionString);
+        //        connection = new SqlConnection(ConnectionString);
 
-                if (connection.State == ConnectionState.Closed)
-                {
-                    connection.Open();
-                }
-                command = new SqlCommand(strSql);
-                command.CommandText = strSql;
-                command.Connection = connection;
+        //        if (connection.State == ConnectionState.Closed)
+        //        {
+        //            connection.Open();
+        //        }
+        //        command = new SqlCommand(strSql);
+        //        command.CommandText = strSql;
+        //        command.Connection = connection;
 
-                dtmOpenDate = Convert.ToDateTime(command.ExecuteScalar());
+        //        dtmOpenDate = Convert.ToDateTime(command.ExecuteScalar());
 
-                if (connection.State == ConnectionState.Open)
-                {
-                    connection.Close();
-                }
+        //        if (connection.State == ConnectionState.Open)
+        //        {
+        //            connection.Close();
+        //        }
 
-                OpenDate = dtmOpenDate.ToString("dd-MMM-yyyy");
+        //        OpenDate = dtmOpenDate.ToString("dd-MMM-yyyy");
 
-                return OpenDate;
+        //        return OpenDate;
 
-            }
-            catch (Exception ex)
-            {
+        //    }
+        //    catch (Exception ex)
+        //    {
 
-                throw new Exception(ex.Message);
-            }
+        //        throw new Exception(ex.Message);
+        //    }
 
-        }
+        //}
         public static string GetDate(string columnName, string tableName, string whereCondition)
         {
             try
@@ -911,113 +911,113 @@ namespace EmunaERP
 
             return ChartOfAccountNo;
         }
-        public static double getIntlamount(double dblPrincipalAmt, string Productno, string ColcOption, double Duration, double dblNoOfInstl)
-        {
-            try
-            {
-                double dblInstlAmount, dblBufferamount, dblNoOfinstl = 0;
+        //public static double getIntlamount(double dblPrincipalAmt, string Productno, string ColcOption, double Duration, double dblNoOfInstl)
+        //{
+        //    try
+        //    {
+        //        double dblInstlAmount, dblBufferamount, dblNoOfinstl = 0;
 
-                dblNoOfinstl = Convert.ToDouble(Common.GetSingleData("NoOfInstl", "Loan_V_ProductPrincipalUnit", "Productno='" + Productno + "' and ColcOption=" + ColcOption + " and Duration='" + Duration + "'"));
+        //        dblNoOfinstl = Convert.ToDouble(Common.GetSingleData("NoOfInstl", "Loan_V_ProductPrincipalUnit", "Productno='" + Productno + "' and ColcOption=" + ColcOption + " and Duration='" + Duration + "'"));
 
-                string strQueryString = "";
-                strQueryString += "Select ((" + dblPrincipalAmt + "*InstlAmtPerUnit/UnitAmount)+" + dblPrincipalAmt + ")/" + dblNoOfInstl + " from Loan_V_ProductPrincipalUnit "
-                + " Where Productno='" + Productno + "' and ColcOption=" + ColcOption + " and Duration='" + Duration + "' and NoOfInstl=" + dblNoOfinstl + " ";
+        //        string strQueryString = "";
+        //        strQueryString += "Select ((" + dblPrincipalAmt + "*InstlAmtPerUnit/UnitAmount)+" + dblPrincipalAmt + ")/" + dblNoOfInstl + " from Loan_V_ProductPrincipalUnit "
+        //        + " Where Productno='" + Productno + "' and ColcOption=" + ColcOption + " and Duration='" + Duration + "' and NoOfInstl=" + dblNoOfinstl + " ";
 
-                dblBufferamount = Convert.ToDouble(ExeScalar(strQueryString));
+        //        dblBufferamount = Convert.ToDouble(ExeScalar(strQueryString));
 
-                dblInstlAmount = Convert.ToDouble(Common.GetSingleData("Round(" + dblBufferamount + ",0)", "Loan_V_ProductPrincipalUnit", "Productno='" + Productno + "' and ColcOption=" + ColcOption + " and Duration='" + Duration + "'"));
+        //        dblInstlAmount = Convert.ToDouble(Common.GetSingleData("Round(" + dblBufferamount + ",0)", "Loan_V_ProductPrincipalUnit", "Productno='" + Productno + "' and ColcOption=" + ColcOption + " and Duration='" + Duration + "'"));
 
-                if (dblInstlAmount < dblBufferamount)
-                {
-                    dblInstlAmount = dblInstlAmount + 1;
-                }
+        //        if (dblInstlAmount < dblBufferamount)
+        //        {
+        //            dblInstlAmount = dblInstlAmount + 1;
+        //        }
 
-                return dblInstlAmount;
-            }
-            catch (Exception ex)
-            {
-                return 0;
-            }
-        }
-        public static double getTotalPayableAmount(double dblPrincipalAmt, string Productno, string ColcOption, double Duration, double dblNoOfInstl)
-        {
-            try
-            {
-                double dblTotalPayAmount, dblNoOfinstl = 0;
+        //        return dblInstlAmount;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return 0;
+        //    }
+        //}
+        //public static double getTotalPayableAmount(double dblPrincipalAmt, string Productno, string ColcOption, double Duration, double dblNoOfInstl)
+        //{
+        //    try
+        //    {
+        //        double dblTotalPayAmount, dblNoOfinstl = 0;
 
-                dblNoOfinstl = Convert.ToDouble(Common.GetSingleData("NoOfInstl", "Loan_V_ProductPrincipalUnit", "Productno='" + Productno + "' and ColcOption=" + ColcOption + " and Duration='" + Duration + "'"));
+        //        dblNoOfinstl = Convert.ToDouble(Common.GetSingleData("NoOfInstl", "Loan_V_ProductPrincipalUnit", "Productno='" + Productno + "' and ColcOption=" + ColcOption + " and Duration='" + Duration + "'"));
 
-                string strQueryString = "";
-                strQueryString += "Select ((" + dblPrincipalAmt + "*InstlAmtPerUnit/UnitAmount)+" + dblPrincipalAmt + ") from Loan_V_ProductPrincipalUnit "
-                + " Where Productno='" + Productno + "' and ColcOption=" + ColcOption + " and Duration='" + Duration + "' and NoOfInstl=" + dblNoOfinstl + " ";
+        //        string strQueryString = "";
+        //        strQueryString += "Select ((" + dblPrincipalAmt + "*InstlAmtPerUnit/UnitAmount)+" + dblPrincipalAmt + ") from Loan_V_ProductPrincipalUnit "
+        //        + " Where Productno='" + Productno + "' and ColcOption=" + ColcOption + " and Duration='" + Duration + "' and NoOfInstl=" + dblNoOfinstl + " ";
 
-                dblTotalPayAmount = Convert.ToDouble(ExeScalar(strQueryString));
+        //        dblTotalPayAmount = Convert.ToDouble(ExeScalar(strQueryString));
 
-                return dblTotalPayAmount;
+        //        return dblTotalPayAmount;
 
-            }
-            catch (Exception ex)
-            {
-                return 0;
-            }
-        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return 0;
+        //    }
+        //}
 
-        public static string GetDate(string savcolcdate)
+        public static string GetDate(string strDate)
         {
             string returndate = "";
-            returndate = Convert.ToDateTime(savcolcdate).ToString("dd-MMM-yyyy");
+            returndate = Convert.ToDateTime(strDate).ToString("dd-MMM-yyyy");
             return returndate;
         }
-        public static string GetNextColcDate(string savcolcdate)
-        {
-            try
-            {
-                string ReturnNextColcDate = "";
+        //public static string GetNextColcDate(string savcolcdate)
+        //{
+        //    try
+        //    {
+        //        string ReturnNextColcDate = "";
 
-                savcolcdate = GetDate(savcolcdate);
+        //        savcolcdate = GetDate(savcolcdate);
 
-                string SystemOpenDate = OpenDate();
+        //        string SystemOpenDate = OpenDate();
 
-                if (Convert.ToDateTime(SystemOpenDate) > Convert.ToDateTime(savcolcdate))
-                {
-                    ReturnNextColcDate = SystemOpenDate;
-                }
-                else
-                {
-                    ReturnNextColcDate = savcolcdate;
-                }
+        //        if (Convert.ToDateTime(SystemOpenDate) > Convert.ToDateTime(savcolcdate))
+        //        {
+        //            ReturnNextColcDate = SystemOpenDate;
+        //        }
+        //        else
+        //        {
+        //            ReturnNextColcDate = savcolcdate;
+        //        }
 
-                return ReturnNextColcDate;
+        //        return ReturnNextColcDate;
 
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
-        public static string GetCalcIntrDate(string SetupDate,SqlTransaction transaction)
-        {
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                command.Connection = transaction.Connection;
-                command.Transaction = transaction;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception(ex.Message);
+        //    }
+        //}
+        //public static string GetCalcIntrDate(string SetupDate,SqlTransaction transaction)
+        //{
+        //    try
+        //    {
+        //        SqlCommand command = new SqlCommand();
+        //        command.Connection = transaction.Connection;
+        //        command.Transaction = transaction;
 
-                string ReturnDate = "";
+        //        string ReturnDate = "";
 
-                command.CommandText = "Select DATEADD(yy,1,'" + SetupDate + "')";
+        //        command.CommandText = "Select DATEADD(yy,1,'" + SetupDate + "')";
 
-                ReturnDate = Convert.ToString(command.ExecuteScalar());
+        //        ReturnDate = Convert.ToString(command.ExecuteScalar());
 
-                ReturnDate = Common.GetDate(ReturnDate);
+        //        ReturnDate = Common.GetDate(ReturnDate);
 
-                return ReturnDate;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
+        //        return ReturnDate;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception(ex.Message);
+        //    }
+        //}
         public static object GetSingleData(string ColumnName, string tableName, string WhereCondition,SqlTransaction transaction)
         {
             try
@@ -1048,29 +1048,29 @@ namespace EmunaERP
                 throw new Exception(ex.Message);
             }
         }
-        public static string MaxOpenDate(SqlTransaction transaction)
-        {
-            try
-            {
-                SqlCommand command = new SqlCommand();
-                command.Connection = transaction.Connection;
-                command.Transaction = transaction;
+        //public static string MaxOpenDate(SqlTransaction transaction)
+        //{
+        //    try
+        //    {
+        //        SqlCommand command = new SqlCommand();
+        //        command.Connection = transaction.Connection;
+        //        command.Transaction = transaction;
 
-                DateTime date = new DateTime();
-                string ReturnDate = "";
+        //        DateTime date = new DateTime();
+        //        string ReturnDate = "";
 
-                command.CommandText = "Select Max(EntryDate) from Acc_DayOpenClose Where Status = 0 ";
+        //        command.CommandText = "Select Max(EntryDate) from Acc_DayOpenClose Where Status = 0 ";
 
-                date = Convert.ToDateTime(command.ExecuteScalar());
-                ReturnDate = date.ToString("dd-MMM-yyyy");
+        //        date = Convert.ToDateTime(command.ExecuteScalar());
+        //        ReturnDate = date.ToString("dd-MMM-yyyy");
 
-                return ReturnDate;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-        }
+        //        return ReturnDate;
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception(ex.Message);
+        //    }
+        //}
     }
 
 }
