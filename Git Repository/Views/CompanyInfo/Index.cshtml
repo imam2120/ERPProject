@@ -190,6 +190,15 @@
             pageSizes: true,
             buttonCount: 5
         },
+        toolbar: ["search"],
+        search: {
+            fields: [
+                //{ name: "OrderID", operator: "eq" },
+                //{ name: "Freight", operator: "gte" },
+                { name: "CompanyName", operator: "contains" },
+                { name: "ContactTitle", operator: "contains" },
+            ]
+        },
         columns: [{
             template: "<div class='customer-photo'" +
                 "style='background-image: url(../content/web/Customers/#:data.CustomerID#.jpg);'></div>" +
