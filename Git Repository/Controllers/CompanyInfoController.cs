@@ -13,5 +13,9 @@ namespace EmunaERP.Controllers
         {
             return View();
         }
+        public ActionResult BranchInfo()
+        {
+            return View();
+        }
     }
 }
