@@ -17,5 +17,26 @@ namespace EmunaERP.Controllers
         {
             return View();
         }
+        public ActionResult ProductGroup()
+        {
+            return View();
+        }
+        public ActionResult ProductCategory()
+        {
+            return View();
+        }
+        public ActionResult ProductSubCategory()
+        {
+            return View();
+        }
+        public ActionResult ProductUnit()
+        {
+            return View();
+        }
+        public ActionResult ProductInformation()
+        {
+            return View();
+        }
+
     }
 }
