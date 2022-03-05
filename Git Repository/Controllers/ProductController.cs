@@ -14,6 +14,11 @@ namespace EmunaERP.Controllers
             return View();
         }
 
+        public ActionResult Test()
+        {
+            return View();
+        }
+
         public ActionResult ProductGroup()
         {
             return View();
