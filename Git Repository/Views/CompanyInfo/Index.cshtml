@@ -1,4 +1,7 @@
-﻿
+﻿@using EmunaERP.Models;
+
+@using Kendo.Mvc
+
 @{
     ViewBag.Title = "Index";
 }
@@ -24,111 +27,9 @@
 <link rel="stylesheet" href="~/plugins/daterangepicker/daterangepicker.css">
 <!-- summernote -->
 <link rel="stylesheet" href="~/plugins/summernote/summernote-bs4.min.css">
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <link href="~/Content/kendo.common.min.css" rel="stylesheet" />
-
-<div class="card card-info">
-    <div class="card-header">
-        <h3 class="card-title">Company Information</h3>
-    </div>
-    <!-- /.card-header -->
-    <!-- form start -->
-
-
-    <form class="form-horizontal">
-        <div class="card-body">
-            <div class="form-group row">
-                <label for="lblName" class="col-md-2 col-form-label" style="text-align: right;">Name  :</label>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" id="txtName" name="txtName" placeholder="Company Name">
-                </div>
-                <label for="lblTitle" class="col-md-2 col-form-label" style="text-align: right;">Title :</label>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" id="txtTitle" name="txtTitle" placeholder="Title">
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="lblAddress" class="col-md-2 right col-form-label" style="text-align: right;">Address :</label>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" id="txtAddress" name="txtAddress" placeholder="Address">
-
-                </div>
-                <label for="lblContactNo" class="col-md-2 right col-form-label" style="text-align: right;">Contact No :</label>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" id="txtContactNo" name="txtContactNo" placeholder="Contact No">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="lblEmail" class="col-md-2 col-form-label" style="text-align: right;">Email :</label>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" id="txtEmail" name="txtEmail" placeholder="Email">
-                </div>
-                <label for="lblBIN" class="col-md-2 right col-form-label" style="text-align: right;">BIN :</label>
-                <div class="col-md-4">
-                    <input type="text" class="form-control" id="txtBIN" name="txtBIN" placeholder="Business Identification Number">
-                </div>
-            </div>
-
-            <div class="form-group row">
-                <label for="inputPassword3" class="col-md-2 col-form-label" style="text-align: right;">Password:</label>
-                <div class="col-md-4">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                </div>
-                <label for="inputEmail4" class="col-md-2 right col-form-label" style="text-align: right;">Name :</label>
-                <div class="col-md-4">
-                    <select class="form-control select2" style="width: 100%;">
-                        <option selected="selected">Alabama</option>
-                        <option>Alaska</option>
-                        <option>California</option>
-                        <option>Delaware</option>
-                        <option>Tennessee</option>
-                        <option>Texas</option>
-                        <option>Washington</option>
-                    </select>
-                </div>
-            </div>
-            @*<div class="form-group row">
-            <label for="inputPassword3" class="col-md-2 col-form-label" style="text-align: right;">Password:</label>
-            <div class="col-md-4">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-            </div>
-            <label for="inputEmail4" class="col-md-2 right col-form-label" style="text-align: right;">Name :</label>
-            <div class="col-md-4">
-                <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
-            </div>
-        </div>*@
-            @*<div class="form-group row">
-            <div class="offset-md-2 col-md-10">
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                    <label class="form-check-label" for="exampleCheck2">Remember me</label>
-                </div>
-            </div>
-        </div>*@
-        </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-            <button type="submit" id="btnSubmit" class="btn btn-info">Submit</button>
-            <button type="submit" id="btnCancel" class="btn btn-default">Cancel</button>
-        </div>
-        <!-- /.card-footer -->
-    </form>
-</div>
-<div>
-    <div id="example">
-        <div id="grid"></div>
-
-
-    </div>
-</div>
-<!-- /.card -->
-<!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-</aside>
-<!-- /.control-sidebar -->
-<!-- ./wrapper -->
-<!-- jQuery -->
 <script src="~/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="~/plugins/jquery-ui/jquery-ui.min.js"></script>
@@ -157,80 +58,126 @@
 <script src="~/plugins/select2/js/select2.full.min.js"></script>
 <!-- AdminLTE App -->
 <script src="~/dist/js/adminlte.js"></script>
-<script src="~/Scripts/product.js"></script>
+@*<script src="~/Scripts/product.js"></script>*@
 <script src="~/Scripts/kendo.all.min.js"></script>
-<script>
+@*<script src="~/Scripts/kendo.aspnetmvc.min.js"></script>*@
+<script src="~/Scripts/CustomScript/Common.js"></script>
+<script src="~/Scripts/CustomScript/CompanyInfo.js"></script>
+<div class="card card-info">
+    <div class="card-header">
+        <h3 class="card-title">Company Information</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
 
-    $('.select2').select2()
+    
+    @using (Html.BeginForm("Save_UpdateCompanyInfo", "CompanyInfo", FormMethod.Post, new { Class = "form-horizontal", id = "frmCompanyInfo", name = "frmCompanyInfo" }))
+    {
+        <form class="form-horizontal">
+            <div class="card-body">
+                <div class="form-group row">
+                    <label for="lblName" class="col-md-2 col-form-label" style="text-align: right;">Name  :</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtCompanyName" name="txtCompanyName" placeholder="Company Name">
+                        <input type="hidden" id="hdnCompanyId" />
+                    </div>
+                    <label for="lblTitle" class="col-md-2 col-form-label" style="text-align: right;">Title :</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtTitle" name="txtTitle" placeholder="Title">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="lblAddress" class="col-md-2 right col-form-label" style="text-align: right;">Address :</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtAddress" name="txtAddress" placeholder="Address">
 
-    //Initialize Select2 Elements
-    $('.select2bs4').select2({
-        theme: 'bootstrap4'
-    })
+                    </div>
+                    <label for="lblContactNo" class="col-md-2 right col-form-label" style="text-align: right;">Contact No :</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtContactNo" name="txtContactNo" placeholder="Contact No">
+                    </div>
+                </div>
 
-    $("#grid").kendoGrid({
-        dataSource: {
-            type: "odata",
-            transport: {
-                read: "https://demos.telerik.com/kendo-ui/service/Northwind.svc/Customers"
-            },
-            pageSize: 10
-        },
-        height: 300,
-        /*groupable: true,*/
-        sortable: {
-            mode: "multiple",
-            allowUnsort: true
-        },
-        filterable: true,
-        serverFiltering: true,
-        serverSorting: true,
-        pageable: {
-            refresh: true,
-            pageSizes: true,
-            buttonCount: 5
-        },
-        toolbar: ["search"],
-        search: {
-            fields: [
-                //{ name: "OrderID", operator: "eq" },
-                //{ name: "Freight", operator: "gte" },
-                { name: "CompanyName", operator: "contains" },
-                { name: "ContactTitle", operator: "contains" },
-            ]
-        },
-        columns: [{
-            template: "<div class='customer-photo'" +
-                "style='background-image: url(../content/web/Customers/#:data.CustomerID#.jpg);'></div>" +
-                "<div class='customer-name'>#: ContactName #</div>",
-            field: "ContactName",
-            field: "ContactName",
-            filterable: {
-                multi: true,
-                search: true
-            },
-            title: "Contact Name",
-            width: 240
-        }, {
-            field: "ContactTitle",
-            filterable: {
-                multi: true,
-            },
-            title: "Contact Title"
-        }, {
-            field: "CompanyName",
-            filterable: {
-                multi: true,
-                search: true
-            },
-            title: "Company Name"
-        }, {
-            field: "Country",
-            filterable: {
-                multi: true,
-                search: true
-            },
-             width: 150          
-        }]
-    });
-</script>
+                <div class="form-group row">
+                    <label for="lblEmail" class="col-md-2 col-form-label" style="text-align: right;">Email :</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtEmail" name="txtEmail" placeholder="Email">
+                    </div>
+                    <label for="lblBIN" class="col-md-2 right col-form-label" style="text-align: right;">BIN :</label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="txtBIN" name="txtBIN" placeholder="Business Identification Number">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputPassword3" class="col-md-2 col-form-label" style="text-align: right;">Password:</label>
+                    <div class="col-md-4">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    </div>
+                    <label for="inputEmail4" class="col-md-2 right col-form-label" style="text-align: right;">Name :</label>
+                    <div class="col-md-4">
+                        <select class="form-control select2" style="width: 100%;">
+                            <option selected="selected">Alabama</option>
+                            <option>Alaska</option>
+                            <option>California</option>
+                            <option>Delaware</option>
+                            <option>Tennessee</option>
+                            <option>Texas</option>
+                            <option>Washington</option>
+                        </select>
+                    </div>
+                </div>
+                @*<div class="form-group row">
+                        <label for="inputPassword3" class="col-md-2 col-form-label" style="text-align: right;">Password:</label>
+                        <div class="col-md-4">
+                            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                        </div>
+                        <label for="inputEmail4" class="col-md-2 right col-form-label" style="text-align: right;">Name :</label>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>*@
+                @*<div class="form-group row">
+                        <div class="offset-md-2 col-md-10">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                                <label class="form-check-label" for="exampleCheck2">Remember me</label>
+                            </div>
+                        </div>
+                    </div>*@
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <button type="submit" id="btnSubmit" class="btn btn-info">Submit</button>
+                <button type="submit" id="btnCancel" class="btn btn-default">Cancel</button>
+                <button type="button" id="btnPreview" class="btn btn-default">Cancel</button>
+            </div>
+            <!-- /.card-footer -->
+        </form>
+    }
+    </div>
+<div>
+    <div id="example">
+        <div id="grid"></div>
+    </div>
+
+
+</div>
+<!-- /.card -->
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
+<!-- ./wrapper -->
+<!-- jQuery -->
+@*<script>
+
+        $('.select2').select2()
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
+    </script>*@
+

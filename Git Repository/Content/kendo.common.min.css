@@ -16999,7 +16999,7 @@ col.k-sorted, th.k-sorted {
 
 .k-spreadsheet-cell-editor {
     padding: 0 3px;
-    line-height: 20px;
+    line-height: 15px;
     display: none;
     overflow: hidden;
     position: absolute;
@@ -17058,7 +17058,7 @@ col.k-sorted, th.k-sorted {
         margin-right: .5em;
         margin-left: -.5em;
         padding: 0;
-        line-height: 1;
+        line-height: 0.5;
         vertical-align: middle
     }
 

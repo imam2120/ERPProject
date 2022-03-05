@@ -1,8 +1,11 @@
-﻿using System;
+﻿using EmunaERP.Models;
+using EmunaERP.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace EmunaERP.Controllers
 {
@@ -13,30 +16,30 @@ namespace EmunaERP.Controllers
         {
             return View();
         }
-        public ActionResult BranchInfo()
+
+        [HttpPost]
+        public JsonResult GetCompanyInfo()
         {
-            return View();
-        }
-        public ActionResult ProductGroup()
-        {
-            return View();
-        }
-        public ActionResult ProductCategory()
-        {
-            return View();
-        }
-        public ActionResult ProductSubCategory()
-        {
-            return View();
-        }
-        public ActionResult ProductUnit()
-        {
-            return View();
-        }
-        public ActionResult ProductInformation()
-        {
-            return View();
+            var objitem = new CompanyService();
+            List<CompanyModel> model = new List<CompanyModel>();
+            model = objitem.GetCompanyInfo();
+            var jsonResult = Json(model, JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
         }
 
+
+        public ActionResult Save_UpdateCompanyInfo(FormCollection formCollection)
+        {
+            var jsonResult =  Json("", JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
+        
+
+
+  
+       
     }
 }
