@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Elmah, Version=1.2.13605.0, Culture=neutral, processorArchitecture=MSIL">
+<<<<<<< Updated upstream
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Elmah.dll</HintPath>
     </Reference>
@@ -55,6 +56,12 @@
     </Reference>
     <Reference Include="Kendo.Mvc">
       <HintPath>.\Kendo.Mvc.dll</HintPath>
+=======
+      <HintPath>packages\elmah.corelibrary.1.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah.Mvc, Version=2.1.2.1389, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Elmah.Mvc.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
+>>>>>>> Stashed changes
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualBasic" />
@@ -130,16 +137,31 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Common\Encryption.cs" />
+<<<<<<< Updated upstream
     <Compile Include="Controllers\CompanyInfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+=======
+    <Compile Include="Controllers\BranchController.cs" />
+    <Compile Include="Controllers\CompanyInfoController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="DBAccess\BranchInfoDBAL.cs" />
+>>>>>>> Stashed changes
     <Compile Include="DBAccess\CompanyDBAL.cs" />
     <Compile Include="DBConnection\Common.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< Updated upstream
     <Compile Include="Models\CompanyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+=======
+    <Compile Include="Models\BranchInfoModel.cs" />
+    <Compile Include="Models\CompanyModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\BranchInfoService.cs" />
+>>>>>>> Stashed changes
     <Compile Include="Service\CompanyService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2118,9 +2140,16 @@
     <Content Include="plugins\summernote\summernote.min.js.map" />
     <Content Include="plugins\toastr\toastr.js.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+<<<<<<< Updated upstream
     <Content Include="Scripts\CustomScript\Common.js" />
     <Content Include="Scripts\CustomScript\ProductInfo.js" />
     <Content Include="Scripts\CustomScript\CompanyInfo.js" />
+=======
+    <Content Include="Scripts\CustomScript\BranchInfo.js" />
+    <Content Include="Scripts\CustomScript\Common.js" />
+    <Content Include="Scripts\CustomScript\CompanyInfo.js" />
+    <Content Include="Scripts\CustomScript\ProductInfo.js" />
+>>>>>>> Stashed changes
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -2148,6 +2177,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\CompanyInfo\Index.cshtml" />
+<<<<<<< Updated upstream
     <Content Include="Views\Product\ProductCategory.cshtml" />
     <Content Include="Views\Product\ProductGroup.cshtml" />
     <Content Include="Views\Product\ProductInformation.cshtml" />
@@ -2155,6 +2185,14 @@
     <Content Include="Views\Product\ProductUnit.cshtml" />
     <Content Include="Views\Product\Product.cshtml" />
     <Content Include="Views\Product\ProductInfo.cshtml" />
+=======
+    <Content Include="Views\Product\ProductGroup.cshtml" />
+    <Content Include="Views\Product\ProductCategory.cshtml" />
+    <Content Include="Views\Product\ProductSubCategory.cshtml" />
+    <Content Include="Views\Product\ProductUnit.cshtml" />
+    <Content Include="Views\Product\ProductInformation.cshtml" />
+    <Content Include="Views\Branch\BranchInfo.cshtml" />
+>>>>>>> Stashed changes
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

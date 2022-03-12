@@ -11,10 +11,10 @@ namespace EmunaERP.DBAccess
 {
     public class CompanyDBAL
     {
-        string sqlConnection = Common.getConnection().ToString();
+        //string sqlConnection = Common.getConnection().ToString();
         public DataTable GetCompanyInfo()
         {
-            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-134JQLJ;Initial Catalog=CRVLInventoryDatabase;User Id=sa;Password=sa123;pooling=true;min pool size=5;Max Pool Size=60;");
+            SqlConnection conn = new SqlConnection("Data Source=.\\DATAEXPRESS;Initial Catalog=CRVLInventoryDatabase;User Id=sa;Password=RyansofT2012;pooling=true;min pool size=5;Max Pool Size=60;");
             conn.Open();
             SqlCommand dAd = new SqlCommand("CompanyInfo", conn);
             SqlDataAdapter sda = new SqlDataAdapter(dAd);

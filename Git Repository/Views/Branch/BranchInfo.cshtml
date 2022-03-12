@@ -47,7 +47,7 @@
 <script src="~/dist/js/adminlte.js"></script>
 <script src="~/Scripts/kendo.all.min.js"></script>
 <script src="~/Scripts/CustomScript/Common.js"></script>
-<script src="~/Scripts/CustomScript/ProductInfo.js"></script>
+<script src="~/Scripts/CustomScript/BranchInfo.js"></script>
 
 <style type="text/css">
     .k-widget.k-datepicker.k-header.form-control {
@@ -96,13 +96,13 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Branch Information</h4>
+                <h4 class="modal-title">Large Modal</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                @using (Html.BeginForm("Save_UpdateBranchInfo", "Product", FormMethod.Post, new { Class = "form-horizontal", id = "frmBranchInfo", name = "frmBranchInfo" }))
+                @using (Html.BeginForm("Save_UpdateBranchInfo", "Branch", FormMethod.Post, new { Class = "form-horizontal", id = "frmBranchInfo", name = "frmBranchInfo" }))
                 {
                     <form class="form-horizontal">
                         <div class="card-body">
@@ -141,23 +141,23 @@
                             </div>
 
                             @*<div class="form-group row">
-                                <label for="inputPassword3" class="col-md-2 col-form-label" style="text-align: right;">Password:</label>
-                                <div class="col-md-4">
-                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                                </div>
-                                <label for="inputEmail4" class="col-md-2 right col-form-label" style="text-align: right;">Name :</label>
-                                <div class="col-md-4">
-                                    <select class="form-control select2" style="width: 100%;">
-                                        <option selected="selected">Alabama</option>
-                                        <option>Alaska</option>
-                                        <option>California</option>
-                                        <option>Delaware</option>
-                                        <option>Tennessee</option>
-                                        <option>Texas</option>
-                                        <option>Washington</option>
-                                    </select>
-                                </div>
-                            </div>*@
+                                    <label for="inputPassword3" class="col-md-2 col-form-label" style="text-align: right;">Password:</label>
+                                    <div class="col-md-4">
+                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                    <label for="inputEmail4" class="col-md-2 right col-form-label" style="text-align: right;">Name :</label>
+                                    <div class="col-md-4">
+                                        <select class="form-control select2" style="width: 100%;">
+                                            <option selected="selected">Alabama</option>
+                                            <option>Alaska</option>
+                                            <option>California</option>
+                                            <option>Delaware</option>
+                                            <option>Tennessee</option>
+                                            <option>Texas</option>
+                                            <option>Washington</option>
+                                        </select>
+                                    </div>
+                                </div>*@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
