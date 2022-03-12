@@ -1,4 +1,5 @@
 ﻿
+
 function CallAjax_POST(url, param, IsAsync, callBackFunc) {
     var _data;
     $ajaxRequest = $.ajax({

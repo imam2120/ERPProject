@@ -31,6 +31,14 @@ namespace EmunaERP.Controllers
 
         public ActionResult Save_UpdateCompanyInfo(FormCollection formCollection)
         {
+            CompanyModel companyModel = new CompanyModel();
+           int companyId =Convert.ToInt32(formCollection["hdnCompanyId"]);
+            if (companyId > 0)
+            {
+                companyModel.CompanyId = Convert.ToInt32(formCollection["hdnCompanyId"]);
+            }
+            companyModel.CompanyName = formCollection["txtCompanyName"];
+
             var jsonResult =  Json("", JsonRequestBehavior.AllowGet);
             jsonResult.MaxJsonLength = int.MaxValue;
             return jsonResult;

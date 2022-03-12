@@ -60,6 +60,7 @@ $(document).on("click", "#btnEdit", function () {
   
     var grid = $("#grid").data("kendoGrid");
     var dataItem = grid.dataItem($(this).closest('tr'));
+    $("#hdnCompanyId").val(dataItem.CompanyId);
     $("#txtCompanyName").val(dataItem.CompanyName);
     $("#txtAddress").val(dataItem.Address);
     $("#txtContactNo").val(dataItem.Contact);
@@ -74,7 +75,7 @@ $(document).on("click", "#btnDelete", function () {
     var dataItem = grid.dataItem($(this).closest('tr'));
     //$("#txtCompanyName").val(dataItem.CompanyName);
 
-    var result = CallAjax_POST('GetCompanyInfo/Index', '', false, false)
+    var result = CallAjax_POST('/GetCompanyInfo/Index', '', false, false)
 
     //alert(dataItem.CompanyName);
     // alert(dob);

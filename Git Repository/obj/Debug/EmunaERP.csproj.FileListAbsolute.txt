@@ -77,6 +77,8 @@ F:\EmunaERP\obj\Debug\EmunaERP.csproj.CoreCompileInputs.cache
 F:\EmunaERP\obj\Debug\EmunaERP.csproj.CopyComplete
 F:\EmunaERP\obj\Debug\EmunaERP.dll
 F:\EmunaERP\obj\Debug\EmunaERP.pdb
+E:\Git Repository\obj\Debug\EmunaERP.csproj.AssemblyReference.cache
+E:\Git Repository\obj\Debug\EmunaERP.csproj.CoreCompileInputs.cache
 E:\Git Repository\bin\EmunaERP.dll.config
 E:\Git Repository\bin\EmunaERP.dll
 E:\Git Repository\bin\EmunaERP.pdb
@@ -130,20 +132,19 @@ E:\Git Repository\bin\roslyn\vbc.rsp
 E:\Git Repository\bin\roslyn\VBCSCompiler.exe
 E:\Git Repository\bin\roslyn\VBCSCompiler.exe.config
 E:\Git Repository\bin\Antlr3.Runtime.dll
+E:\Git Repository\bin\Kendo.Mvc.dll
 E:\Git Repository\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 E:\Git Repository\bin\Microsoft.Web.Infrastructure.dll
 E:\Git Repository\bin\Newtonsoft.Json.dll
 E:\Git Repository\bin\System.Web.Helpers.dll
 E:\Git Repository\bin\System.Web.Mvc.dll
-E:\Git Repository\bin\System.Web.Optimization.dll
 E:\Git Repository\bin\System.Web.Razor.dll
 E:\Git Repository\bin\System.Web.WebPages.Deployment.dll
 E:\Git Repository\bin\System.Web.WebPages.dll
 E:\Git Repository\bin\System.Web.WebPages.Razor.dll
-E:\Git Repository\bin\WebGrease.dll
+E:\Git Repository\bin\System.Web.Optimization.xml
 E:\Git Repository\bin\System.Web.Helpers.xml
 E:\Git Repository\bin\System.Web.Mvc.xml
-E:\Git Repository\bin\System.Web.Optimization.xml
 E:\Git Repository\bin\System.Web.Razor.xml
 E:\Git Repository\bin\System.Web.WebPages.xml
 E:\Git Repository\bin\System.Web.WebPages.Deployment.xml
@@ -151,8 +152,6 @@ E:\Git Repository\bin\System.Web.WebPages.Razor.xml
 E:\Git Repository\bin\Newtonsoft.Json.xml
 E:\Git Repository\bin\Antlr3.Runtime.pdb
 E:\Git Repository\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Git Repository\obj\Debug\EmunaERP.csproj.CoreCompileInputs.cache
 E:\Git Repository\obj\Debug\EmunaERP.csproj.CopyComplete
 E:\Git Repository\obj\Debug\EmunaERP.dll
 E:\Git Repository\obj\Debug\EmunaERP.pdb
-E:\Git Repository\obj\Debug\EmunaERP.csproj.AssemblyReference.cache

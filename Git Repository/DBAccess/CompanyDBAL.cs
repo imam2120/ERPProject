@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmunaERP.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
@@ -44,6 +45,11 @@ namespace EmunaERP.DBAccess
                 conn.Close();
                 conn.Dispose();
             }
+        }
+
+        public int SaveCompanyInfo(CompanyModel companyModel)
+        {
+            return 0;
         }
     }
 }
