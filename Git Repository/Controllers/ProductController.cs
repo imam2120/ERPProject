@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EmunaERP.Models;
+using EmunaERP.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,7 +11,7 @@ namespace EmunaERP.Controllers
     public class ProductController : Controller
     {
         // GET: Product
-        public ActionResult Product()
+        public ActionResult ProductInfo()
         {
             return View();
         }
@@ -39,5 +41,16 @@ namespace EmunaERP.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public JsonResult GetCompanyInfo()
+        {
+            var objitem = new CompanyService();
+            List<CompanyModel> model = new List<CompanyModel>();
+            model = objitem.GetCompanyInfo();
+            var jsonResult = Json(model, JsonRequestBehavior.AllowGet);
+            jsonResult.MaxJsonLength = int.MaxValue;
+            return jsonResult;
+        }
+
     }
 }
