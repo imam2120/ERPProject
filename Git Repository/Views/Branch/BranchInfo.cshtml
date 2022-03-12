@@ -47,7 +47,7 @@
 <script src="~/dist/js/adminlte.js"></script>
 <script src="~/Scripts/kendo.all.min.js"></script>
 <script src="~/Scripts/CustomScript/Common.js"></script>
-<script src="~/Scripts/CustomScript/BranchInfo.js"></script>
+<script src="~/Scripts/CustomScript/ProductInfo.js"></script>
 
 <style type="text/css">
     .k-widget.k-datepicker.k-header.form-control {
@@ -86,7 +86,7 @@
 </style>
 <div class="card card-info">
     <div class="card-header">
-        <h6 class="card-title">Product Information</h6>
+        <h6 class="card-title">Branch Information</h6>
     </div>
 </div>
 
@@ -96,79 +96,74 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">Large Modal</h4>
+                <h4 class="modal-title">Branch Information</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                @using (Html.BeginForm("Save_UpdateProductInfo", "Product", FormMethod.Post, new { Class = "form-horizontal", id = "frmProductInfo", name = "frmProductInfo" }))
+                @using (Html.BeginForm("Save_UpdateBranchInfo", "Product", FormMethod.Post, new { Class = "form-horizontal", id = "frmBranchInfo", name = "frmBranchInfo" }))
                 {
                     <form class="form-horizontal">
                         <div class="card-body">
                             <div class="form-group row">
                                 <label for="lblName" class="col-md-2 col-form-label" style="text-align: right;">Name  :</label>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" id="txtName" name="txtName" placeholder="Branch Name">
+                                    <input type="text" class="form-control" id="txtCompanyName" name="txtCompanyName" placeholder="Company Name">
+                                    <input type="hidden" name="hdnCompanyId" id="hdnCompanyId" />
                                 </div>
-                                <label for="lblParent" class="col-md-2 col-form-label" style="text-align: right;">Parent :</label>
+                                <label for="lblBranchName" class="col-md-2 col-form-label" style="text-align: right;">Branch Name :</label>
                                 <div class="col-md-4">
-                                    <select class="form-control select2" style="width: 100%;">
-                                        <option selected="selected">Feni Sweets</option>
-                                        <option>Manikgonj Sweets</option>
-                                        <option>Comilla Rosh Malai</option>
-                                    </select>
+                                    <input type="text" class="form-control" id="txtBranchName" name="txtBranchName" placeholder="Branch Name">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="lblAddress" class="col-md-2 right col-form-label" style="text-align: right;">Address :</label>
+                                <label for="lblMobileNumber" class="col-md-2 right col-form-label" style="text-align: right;">Mobile Number :</label>
                                 <div class="col-md-4">
-                                    <input type="text" class="form-control" id="txtAddress" name="txtAddress" placeholder="Address">
+                                    <input type="text" class="form-control" id="txtMobileNumber" name="txtMobileNumber" placeholder="Mobile Number">
 
                                 </div>
-                                <label for="lblContactNo" class="col-md-2 right col-form-label" style="text-align: right;">Contact No :</label>
-                                <div class="col-md-4">
-                                    <input type="text" class="form-control" id="txtContactNo" name="txtContactNo" placeholder="Contact No">
-                                </div>
-                            </div>
-
-                            <div class="form-group row">
-                                <label for="lblEmail" class="col-md-2 col-form-label" style="text-align: right;">Email :</label>
+                                <label for="lblEmail" class="col-md-2 right col-form-label" style="text-align: right;">Email :</label>
                                 <div class="col-md-4">
                                     <input type="text" class="form-control" id="txtEmail" name="txtEmail" placeholder="Email">
                                 </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="lblWebAddress" class="col-md-2 col-form-label" style="text-align: right;">Web Address :</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" id="txtWebAddress" name="txtWebAddress" placeholder="Web Address">
+                                </div>
                                 <label for="lblStatus" class="col-md-2 right col-form-label" style="text-align: right;">Status :</label>
                                 <div class="col-md-4">
-                                    <select class="form-control select2" style="width: 100%;">
-                                        <option selected="selected">Active</option>
-                                        <option>Inactive</option>
-                                    </select>
+                                    <input type="text" class="form-control" id="txtStatus" name="txtStatus" placeholder="Status">
                                 </div>
                             </div>
 
                             @*<div class="form-group row">
-                                    <label for="inputPassword3" class="col-md-2 col-form-label" style="text-align: right;">Password:</label>
-                                    <div class="col-md-4">
-                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                                    </div>
-                                    <label for="inputEmail4" class="col-md-2 right col-form-label" style="text-align: right;">Name :</label>
-                                    <div class="col-md-4">
-                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Email">
-                                    </div>
-                                </div>*@
-                            @*<div class="form-group row">
-                                    <div class="offset-md-2 col-md-10">
-                                        <div class="form-check">
-                                            <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                                            <label class="form-check-label" for="exampleCheck2">Remember me</label>
-                                        </div>
-                                    </div>
-                                </div>*@
+                                <label for="inputPassword3" class="col-md-2 col-form-label" style="text-align: right;">Password:</label>
+                                <div class="col-md-4">
+                                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                </div>
+                                <label for="inputEmail4" class="col-md-2 right col-form-label" style="text-align: right;">Name :</label>
+                                <div class="col-md-4">
+                                    <select class="form-control select2" style="width: 100%;">
+                                        <option selected="selected">Alabama</option>
+                                        <option>Alaska</option>
+                                        <option>California</option>
+                                        <option>Delaware</option>
+                                        <option>Tennessee</option>
+                                        <option>Texas</option>
+                                        <option>Washington</option>
+                                    </select>
+                                </div>
+                            </div>*@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
                             <button type="submit" id="btnSubmit" class="btn btn-info">Submit</button>
                             <button type="submit" id="btnCancel" class="btn btn-default">Cancel</button>
+                            <button type="button" id="btnPreview" class="btn btn-default">Cancel</button>
                         </div>
                         <!-- /.card-footer -->
                     </form>
