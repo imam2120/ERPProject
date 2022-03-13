@@ -31,23 +31,30 @@ namespace EmunaERP.Controllers
 
         public ActionResult Save_UpdateCompanyInfo(FormCollection formCollection)
         {
+            int result = 0;
+            var objitem = new CompanyService();
             CompanyModel companyModel = new CompanyModel();
            int companyId =Convert.ToInt32(formCollection["hdnCompanyId"]);
+            companyModel.CompanyName = formCollection["txtCompanyName"];
+            companyModel.Address = formCollection["txtAddress"];
+            companyModel.Email = formCollection["txtEmail"];
             if (companyId > 0)
             {
-                companyModel.CompanyId = Convert.ToInt32(formCollection["hdnCompanyId"]);
+                result= objitem.UpdateCompanyInfo(companyModel);
             }
-            companyModel.CompanyName = formCollection["txtCompanyName"];
+            else
+            {
+                result= objitem.SaveCompanyInfo(companyModel);
+            }
 
-            var jsonResult =  Json("", JsonRequestBehavior.AllowGet);
-            jsonResult.MaxJsonLength = int.MaxValue;
-            return jsonResult;
+            if (result == 1)
+                ViewBag.Message = "Data Save Successfully..!";
+            // return Json(new { success = true, Message = "Data Save Successfully..!" });          
+            else
+                ViewBag.Message = "Data Save Failed..!";
+            //return Json(new { success = false, Message = "Data Save Failed..!" });
+            return View();
         }
-
-        
-
-
-  
-       
+   
     }
 }

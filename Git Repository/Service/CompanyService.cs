@@ -43,36 +43,32 @@ namespace EmunaERP.Service
             }
         }
 
-        public List<CompanyModel> SaveCompanyInfo()
-        {
-            CompanyModel companyModel = new CompanyModel();
-            List<CompanyModel> _modelList = new List<CompanyModel>();
-            DataTable dt = new DataTable();
+        public int SaveCompanyInfo(CompanyModel companyModel)
+        {                     
             try
             {
-                CompanyDBAL _objList = new CompanyDBAL();
-               
-                int i = _objList.SaveCompanyInfo(companyModel);
-                if (dt.Rows.Count > 0) 
-                {
-                    _modelList = (from DataRow row in dt.Rows
-                                  select new CompanyModel
-                                  {
-                                      CompanyId = Convert.ToInt32(row["CompanyId"]),
-                                      CompanyName = row["CompanyName"].ToString(),
-                                      Address = row["Address"].ToString(),
-                                      Contact = row["Contact"].ToString(),
-                                      Email = row["Email"].ToString(),
-                                      WebAddress = row["WebAddress"].ToString()
-                                  }).ToList();
-                }
-
-
-                return _modelList;
+                CompanyDBAL _objList = new CompanyDBAL();             
+                int result = _objList.SaveCompanyInfo(companyModel);
+                return result;
             }
             catch (Exception ex)
             {
               ErrorSignal.FromCurrentContext().Raise(ex);
+                throw ex;
+            }
+        }
+
+        public int UpdateCompanyInfo(CompanyModel companyModel)
+        {
+            try
+            {
+                CompanyDBAL _objList = new CompanyDBAL();
+                int result = _objList.UpdateCompanyInfo(companyModel);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                ErrorSignal.FromCurrentContext().Raise(ex);
                 throw ex;
             }
         }
