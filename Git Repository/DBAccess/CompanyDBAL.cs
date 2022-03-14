@@ -14,6 +14,8 @@ namespace EmunaERP.DBAccess
         //string sqlConnection = Common.getConnection().ToString();
         public DataTable GetCompanyInfo()
         {
+            DataTable dSet = new DataTable();
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-134JQLJ;Initial Catalog=CRVLInventoryDatabase;User Id=sa;Password=sa123;pooling=true;min pool size=5;Max Pool Size=60;");
             conn.Open();
             SqlCommand dAd = new SqlCommand("CompanyInfo", conn);
             SqlDataAdapter sda = new SqlDataAdapter(dAd);
