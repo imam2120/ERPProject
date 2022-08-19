@@ -29,17 +29,18 @@ $(document).ready(function () {
             search: {
                 fields: [
                     { name: "CompanyId", operator: "eq" },
-                    { name: "CompanyName", operator: "contains" },
+                    { name: "CompanyName", operator: "contains" }, 
                     { name: "address", operator: "contains" },
+                    { name: "Email", operator: "contains" },
 
                 ]
             },
             columns: [
 
-                { field: "CompanyId", title: "Company Id", filterable: true, filterable: { multi: true, search: true }, title: "Company Id", width: "120px" },
-                { field: "CompanyName", title: "Company Name", filterable: true, filterable: { multi: true, search: true }, title: "Company Name", width: "120px" },
+                { field: "CompanyId", title: "Company Id", filterable: true, filterable: { multi: true, search: true }, width: "120px" },
+                { field: "CompanyName", title: "Company Name", filterable: true, filterable: { multi: true, search: true }, width: "120px" },
                 { field: "Address", filterable: true, filterable: { multi: true, search: true }, width: "120px" },
-                { field: "Contact", title: "Contact Number",filterable: { multi: true, search: true }, title: "Company Name", width: "120px" },
+                { field: "Contact", title: "Contact Number",filterable: { multi: true, search: true }, width: "120px" },
                  { field: "Email", title: "Email", filterable: { multi: true, search: true }, width: "120px" },
                 { field: "WebAddress", title: "Web Address", filterable: { multi: true, search: true }, width: "120px" },
                 { field: "Edit ", title: "Action", width: "150px", template: "<button type='button' class='btn btn-success btn-sm' id='btnEdit'>Edit</button>&nbsp;&nbsp;<button type='button' class='btn btn-danger btn-sm' id='btnDelete'>Delete</button>"}

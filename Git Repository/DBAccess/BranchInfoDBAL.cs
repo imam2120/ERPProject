@@ -13,8 +13,8 @@ namespace EmunaERP.DBAccess
     {
         //string sqlConnection = Common.getConnection().ToString();
         public DataTable GetBranchInfo()
-        {
-            SqlConnection conn = new SqlConnection("Data Source=.\\DATAEXPRESS;Initial Catalog=CRVLInventoryDatabase;User Id=sa;Password=RyansofT2012;pooling=true;min pool size=5;Max Pool Size=60;");
+        {  // SqlConnection conn = new SqlConnection("Data Source=.\\DATAEXPRESS;Initial Catalog=CRVLInventoryDatabase;User Id=sa;Password=RyansofT2012;pooling=true;min pool size=5;Max Pool Size=60;");
+            SqlConnection conn = new SqlConnection("Data Source=DESKTOP-134JQLJ;Initial Catalog=CRVLInventoryDatabase;User Id=sa;Password=sa123;pooling=true;min pool size=5;Max Pool Size=60;");
             conn.Open();
             SqlCommand dAd = new SqlCommand("USP_GetBranchInfo", conn);
             SqlDataAdapter sda = new SqlDataAdapter(dAd);

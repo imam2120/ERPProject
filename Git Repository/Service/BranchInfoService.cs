@@ -28,9 +28,9 @@ namespace EmunaERP.Service
                                       BranchName = row["BranchName"].ToString(),
                                       CompanyID = Convert.ToInt32(row["CompanyID"]),
                                       CompanyName = row["chName"].ToString(),
-                                      MobileNumber = row["MobileNumber"].ToString(),
-                                      Email = row["Email"].ToString(),
-                                      WebAddress = row["WebAddress"].ToString(),
+                                      //MobileNumber = row["MobileNumber"].ToString(),
+                                      //Email = row["Email"].ToString(),
+                                      //WebAddress = row["WebAddress"].ToString(),
                                       Status = row["Status"].ToString()
                                   }).ToList();
                 }

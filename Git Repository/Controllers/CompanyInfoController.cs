@@ -11,7 +11,7 @@ namespace EmunaERP.Controllers
 {
     public class CompanyInfoController : Controller
     {
-        // GET: CompanyInfo
+        // GET: CompanyInfo 
         public ActionResult Index()
         {
             return View();
